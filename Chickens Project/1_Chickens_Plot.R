@@ -24,6 +24,10 @@ legend("topleft", legend = levels(chickwts$feed),
        col = my_colors,
        pch = my_shapes)
 
+# ---------------------------------------------------------------------------------------------------------------
+#Poniżej wykres słupkowy ukazujący rodzaj pokarmu, którymi były karmione kurczaki. Można wysnuć wniosek, że najpopularniejszą karmą były casein oraz sunflower
+# ---------------------------------------------------------------------------------------------------------------
+
 barplot(data = chickwts, height = chickwts$weight)
 
 barplot(data = chickwts,height = chickwts$weight,
@@ -31,4 +35,17 @@ barplot(data = chickwts,height = chickwts$weight,
 
 legend("topleft", legend = levels(chickwts$feed),
        col = my_colors, pch = my_shapes)
+
+# ---------------------------------------------------------------------------------------------------------------
+#Poniżej histogram ukazujący, że najcześciej w hodowli występowały kurczaki o wadze między 300, a 350 gramów.
+
+ord_chick <- chickwts[order(chickwts$weight), ]
+hist(ord_chick$weight, 
+     breaks = 5, 
+     xlab = "Weight of Chickens (grams)", 
+     ylab = "Frequency", 
+     main = "Histogram of Chicken Weights")
+
+# ---------------------------------------------------------------------------------------------------------------
+
 

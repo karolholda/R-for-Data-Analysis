@@ -1,91 +1,87 @@
-# Car Sales Analysis Dashboard 2024
+# 🐓 Chicken Feed Analysis Using R
 
-![Dashboard](https://github.com/PatrykPaul/Car_sales/blob/main/Dashboard/1.png)
----
+![Project Overview](https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/0.jpg)
 
+## 📊 Project Overview
 
-## 📖 Project Overview
-
-This project presents an interactive Power BI dashboard to analyze car sales data for the years 2022-2023. The dataset provides insights into the performance of car manufacturers, revenue generation, customer preferences, and sales trends.
+This project analyzes the `chickwts` dataset in R, which contains information on chicken weights and the type of feed they were given. The goal was to explore and visualize the dataset to uncover patterns and relationships between feed type and chicken growth. The project demonstrates R's capabilities in data exploration, visualization, and statistical analysis.
 
 ### Key Objectives:
-- Identify the best-selling car models and manufacturers.
-- Segment cars based on price categories to target different customer groups.
-- Analyze monthly and regional sales trends for better decision-making.
-- Understand customer behavior, including transmission, engine type, and car body preferences.
+- **Visualize the distribution of chicken weights** using scatter plots, bar charts, and histograms.
+- **Identify the most popular feed types** and their impact on chicken weights.
+- **Compare average weights across feed types** using boxplots and summary statistics.
+- **Provide actionable insights** on which feed types yield the best growth results.
 
 ---
 
-## 📊 Dashboard Insights
+## 📅 Data Overview
 
-The dashboard offers detailed visualizations and analysis, including:
+The dataset consists of:
+- **`weight`**: Chicken weights in grams.
+- **`feed`**: Types of feed given to chickens (e.g., casein, sunflower, horsebean).
 
-- **Best Selling Model**: Identifies the most popular car model.
-- **Total Cars Sold by Company**: A bar chart ranking manufacturers based on sales volume.
-- **Total Revenue**: Displays cumulative income generated from car sales.
-- **Sales Trends by Month**: Tracks monthly performance to highlight peaks and declines in sales.
-- **Body Styles Preferences**: Analyzes customer choices for car styles such as SUVs, Sedans, and Hatchbacks.
-- **Color Preferences**: Pie chart showing the distribution of car colors sold.
-- **Regional Sales Analysis**: Highlights locations with the highest car sales, helping to pinpoint geographic performance.
+---
 
 <div align="center" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-bottom:50px;">
-  <img src="https://github.com/PatrykPaul/Car_sales/blob/main/Dashboard/2.png" alt="Dashboard Preview 2" style="width:380px; height:auto;">
-  <img src="https://github.com/PatrykPaul/Car_sales/blob/main/Dashboard/3.png" alt="Dashboard Preview 3" style="width:380px; height:auto;">
+  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/1.jpg" alt="Dashboard Preview 2" style="width:380px; height:auto;">
+  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/2.jpg" alt="Dashboard Preview 3" style="width:380px; height:auto;">
 </div>
 
 <div align="center" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-bottom:50px;">
-  <img src="https://github.com/PatrykPaul/Car_sales/blob/main/Dashboard/4.png" alt="Dashboard Preview 4" style="width:380px; height:auto;">
-  <img src="https://github.com/PatrykPaul/Car_sales/blob/main/Dashboard/6.png" alt="Dashboard Preview 6" style="width:380px; height:auto;">
+  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/3.jpg" alt="Dashboard Preview 4" style="width:380px; height:auto;">
+  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/4.jpg" alt="Dashboard Preview 6" style="width:380px; height:auto;">
 </div>
 
+## 🛠 Tools and Techniques
+
+This project utilized various tools and techniques in R to explore and visualize the dataset effectively:
+
+- **Data Exploration**: Functions like `data()` and `nrow()` were used to inspect the dataset, while basic plots (`plot()`) were employed to visualize initial patterns in chicken weights.
+- **Custom Visualizations**: Enhanced scatter plots with custom colors and shapes using:
+  - `my_colors` and `my_shapes` vectors for feed-based differentiation.
+  - Added legends to improve interpretability with `legend()`.
+- **Bar Charts**: Used `barplot()` to display the distribution of weights by feed type, incorporating custom colors for better visualization.
+- **Histograms**: Visualized the distribution of chicken weights with `hist()`, highlighting frequency trends across weight ranges.
+- **Boxplots**: Compared weight distributions across feed types using `boxplot()` with features like `notch = TRUE` and `varwidth = TRUE` for better visual insights into median and variability.
+- **Statistical Analysis**: Calculated mean weights for each feed type using `tapply()` and visualized them with a grouped bar chart (`barplot()`).
+- **Data Cleaning**: Ensured consistent analysis by:
+  - Mapping colors and shapes to feed types.
+  - Sorting chickens by weight for better grouping and analysis.
+  - Using `na.rm = TRUE` in calculations to handle any potential missing values.
+    
 ---
 
-## 📋 Tools Used
+## 📈 Key Insights
 
-### Power BI:
-- **Data Cleaning**: Handled null values, inconsistencies, and formatted date columns.
-- **Data Modeling**: Established relationships between multiple tables (e.g., car details, sales data, and pricing).
-- **Custom Measures**: Created DAX measures for:
-  - Top-selling car models.
-  - Monthly revenue trends.
-  - Customer preferences segmentation.
-- **Interactive Filters**: Added slicers for date range, price categories, engine type, and transmission type.
+### Weight Distribution:
+- Most chickens weighed between **300–350 grams**.
+- Very few chickens exceeded **400 grams**.
 
----
+### Feed Type Popularity:
+- **Casein** and **sunflower** were the most commonly used feed types.
 
-## 🔍 Filters and Features
+### Feed Efficiency:
+- Chickens fed with **casein** showed the highest average weight, while those fed with **linseed** had the lowest.
 
-- **Price Categories**: Dynamic segmentation of cars into four price brackets.
-- **Date Filters**: Enables the user to explore trends over specific periods.
-- **Interactive Slicers**: Filters for engine type, transmission type, and regions to focus the analysis.
-- **Dynamic Images**: Default image highlights the top-performing car model while updating based on user selections.
-
----
-
-## ⚙️ Data Preparation
-
-### Source:
-- The dataset includes details of car sales transactions, extracted from a fictional database.
-
-### Data Cleaning:
-- Addressed null values and duplicates.
-- Standardized date formats.
-- Verified relationships between tables to ensure data integrity.
-
----
-
-## 🖥️ Preview of the Filters Panel
-
-![Filters Panel Preview](https://github.com/PatrykPaul/Car_sales/blob/main/Dashboard/5.png)
+### Variability:
+- Boxplots revealed significant variability in weight for certain feed types, indicating inconsistent results.
 
 ---
 
-## 🚀 How to Use the Dashboard
+## 🧹 Data Cleaning Story
 
-1. Open the `.pbix` file in Power BI Desktop.
-2. Explore the interactive slicers to filter the data by price categories, date ranges, and customer preferences.
-3. Analyze the visualizations to derive meaningful insights for business decisions.
+### Color and Shape Mapping:
+- Assigned specific colors and shapes to feed types for better visualization clarity.
 
+### Sorting and Grouping:
+- Ordered chickens by weight to ensure consistent insights.
 
+### Handling Missing Data:
+- Although the dataset had no missing values, precautions were included with `na.rm = TRUE`.
 
+---
+
+## 🌟 Why This Project Matters
+
+Understanding how feed types impact chicken growth allows for data-driven decisions in optimizing poultry farming. This project demonstrates how R can transform raw data into actionable insights through statistical analysis and visualization.
 

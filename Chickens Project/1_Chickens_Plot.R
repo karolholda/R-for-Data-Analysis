@@ -25,7 +25,7 @@ legend("topleft", legend = levels(chickwts$feed),
        pch = my_shapes)
 
 # ---------------------------------------------------------------------------------------------------------------
-#Poniżej wykres słupkowy ukazujący rodzaj pokarmu, którymi były karmione kurczaki. Można wysnuć wniosek, że najpopularniejszą karmą były casein oraz sunflower
+# Poniżej wykres słupkowy ukazujący rodzaj pokarmu, którymi były karmione kurczaki. Można wysnuć wniosek, że najpopularniejszą karmą były casein oraz sunflower
 # ---------------------------------------------------------------------------------------------------------------
 
 barplot(data = chickwts, height = chickwts$weight)
@@ -37,7 +37,8 @@ legend("topleft", legend = levels(chickwts$feed),
        col = my_colors, pch = my_shapes)
 
 # ---------------------------------------------------------------------------------------------------------------
-#Poniżej histogram ukazujący, że najcześciej w hodowli występowały kurczaki o wadze między 300, a 350 gramów.
+# Poniżej histogram ukazujący, że najcześciej w hodowli występowały kurczaki o wadze między 300, a 350 gramów.
+# Można również wysnuć wniosek, że najmniej było największych kurczaków o masie około 400 gramów.
 # ---------------------------------------------------------------------------------------------------------------
 
 ord_chick <- chickwts[order(chickwts$weight), ]
@@ -48,5 +49,23 @@ hist(ord_chick$weight,
      main = "Histogram of Chicken Weights")
 
 # ---------------------------------------------------------------------------------------------------------------
+# Poniżej prezentuję wykres pudełkowy pokazujący nie tylko medianę dla poszczególnych grup, ale również odchylenie standardowe.
+# Wykres ten ukazuje jakiej karmy nie używać oraz jaką używać, by kurczaki rosły jak najlepiej.
+# ---------------------------------------------------------------------------------------------------------------
 
+boxplot(weight ~ feed, data = chickwts, varwidth = TRUE, notch = TRUE,
+        col='gray')
 
+# ---------------------------------------------------------------------------------------------------------------
+# Poniżej średnią wagę kurczaka w zależności od karmy
+# ---------------------------------------------------------------------------------------------------------------
+
+feed_mean <- tapply(chickwts$weight, chickwts$feed, mean, na.rm=T)
+feed_mean
+
+barplot(feed_mean, 
+        main = "Mean Chicken Weight by Feed Type", 
+        xlab = "Feed Type", 
+        ylab = "Mean Weight (grams)", 
+        col = "lightblue", 
+        las = 2)  # Obraca etykiety osi X

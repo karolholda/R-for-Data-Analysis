@@ -38,6 +38,7 @@ legend("topleft", legend = levels(chickwts$feed),
 
 # ---------------------------------------------------------------------------------------------------------------
 #Poniżej histogram ukazujący, że najcześciej w hodowli występowały kurczaki o wadze między 300, a 350 gramów.
+# ---------------------------------------------------------------------------------------------------------------
 
 ord_chick <- chickwts[order(chickwts$weight), ]
 hist(ord_chick$weight, 

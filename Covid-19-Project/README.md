@@ -4,7 +4,7 @@
 
 This project analyzes the COVID-19 dataset using R, focusing on key aspects such as death rates, demographic factors, and statistical correlations. The dataset contains information on various COVID-19 cases, including demographics, symptoms, and outcomes. The goal of this project is to provide insights into the factors influencing COVID-19 outcomes using data exploration, statistical testing, and visualization.
 
-(https://github.com/karolholda/R-for-Data-Analysis/blob/main/Covid-19-Project/assets/1.jpg)
+![Project Overview](https://github.com/karolholda/R-for-Data-Analysis/blob/main/Covid-19-Project/assets/1.jpg)
 
 ### Key Objectives:
 - **Calculate the overall death rate** and its percentage.

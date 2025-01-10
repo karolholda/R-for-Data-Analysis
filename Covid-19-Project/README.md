@@ -1,87 +1,118 @@
-# 🐓 Chicken Feed Analysis Using R
-
-![Project Overview](https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/0.jpg)
+# 🦠 COVID-19 Analysis Using R
 
 ## 📊 Project Overview
 
-This project analyzes the `chickwts` dataset in R, which contains information on chicken weights and the type of feed they were given. The goal was to explore and visualize the dataset to uncover patterns and relationships between feed type and chicken growth. The project demonstrates R's capabilities in data exploration, visualization, and statistical analysis.
+This project analyzes the COVID-19 dataset using R, focusing on key aspects such as death rates, demographic factors, and statistical correlations. The dataset contains information on various COVID-19 cases, including demographics, symptoms, and outcomes. The goal of this project is to provide insights into the factors influencing COVID-19 outcomes using data exploration, statistical testing, and visualization.
 
 ### Key Objectives:
-- **Visualize the distribution of chicken weights** using scatter plots, bar charts, and histograms.
-- **Identify the most popular feed types** and their impact on chicken weights.
-- **Compare average weights across feed types** using boxplots and summary statistics.
-- **Provide actionable insights** on which feed types yield the best growth results.
+- **Calculate the overall death rate** and its percentage.
+- **Analyze the effect of age on survival** and test statistical significance.
+- **Evaluate gender's influence on COVID-19 outcomes** using hypothesis testing.
+- **Visualize data distributions and trends**, such as age distribution and deaths by country.
+- **Build logistic regression models** to predict death probabilities based on key variables.
 
 ---
 
 ## 📅 Data Overview
 
 The dataset consists of:
-- **`weight`**: Chicken weights in grams.
-- **`feed`**: Types of feed given to chickens (e.g., casein, sunflower, horsebean).
+- **Demographics**: Age, gender, country.
+- **COVID-19 specifics**: Symptom onset, hospital visits, outcomes.
+- **Binary outcome**: Death (1) or Survival (0).
 
 ---
 
-<div align="center" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-bottom:50px;">
-  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/1.jpg" alt="Dashboard Preview 2" style="width:380px; height:auto;">
-  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/2.jpg" alt="Dashboard Preview 3" style="width:380px; height:auto;">
-</div>
-
-<div align="center" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-bottom:50px;">
-  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/3.jpg" alt="Dashboard Preview 4" style="width:380px; height:auto;">
-  <img src="https://github.com/karolholda/R-for-Data-Analysis/blob/main/Chickens%20Project/asstes/4.jpg" alt="Dashboard Preview 6" style="width:380px; height:auto;">
-</div>
-
 ## 🛠 Tools and Techniques
 
-This project utilized various tools and techniques in R to explore and visualize the dataset effectively:
+### Data Cleaning:
+- Added a `death_dummy` variable to indicate death outcomes.
+- Handled missing values using `na.rm = TRUE` in calculations.
 
-- **Data Exploration**: Functions like `data()` and `nrow()` were used to inspect the dataset, while basic plots (`plot()`) were employed to visualize initial patterns in chicken weights.
-- **Custom Visualizations**: Enhanced scatter plots with custom colors and shapes using:
-  - `my_colors` and `my_shapes` vectors for feed-based differentiation.
-  - Added legends to improve interpretability with `legend()`.
-- **Bar Charts**: Used `barplot()` to display the distribution of weights by feed type, incorporating custom colors for better visualization.
-- **Histograms**: Visualized the distribution of chicken weights with `hist()`, highlighting frequency trends across weight ranges.
-- **Boxplots**: Compared weight distributions across feed types using `boxplot()` with features like `notch = TRUE` and `varwidth = TRUE` for better visual insights into median and variability.
-- **Statistical Analysis**: Calculated mean weights for each feed type using `tapply()` and visualized them with a grouped bar chart (`barplot()`).
-- **Data Cleaning**: Ensured consistent analysis by:
-  - Mapping colors and shapes to feed types.
-  - Sorting chickens by weight for better grouping and analysis.
-  - Using `na.rm = TRUE` in calculations to handle any potential missing values.
-    
+### Statistical Analysis:
+- Calculated the mean age for survivors and non-survivors.
+- Conducted t-tests to assess the significance of differences in age and gender's impact on death rates.
+
+### Data Visualization:
+- **Histograms**: Displayed the age distribution of all cases.
+- **Bar Charts**: Showed top 10 countries by number of deaths.
+- **Line Charts**: Illustrated the trends of symptom onset and hospital visits over time.
+
+### Modeling:
+- Logistic regression models were built to assess how variables like age, gender, and location impact death probability.
+
 ---
 
 ## 📈 Key Insights
 
-### Weight Distribution:
-- Most chickens weighed between **300–350 grams**.
-- Very few chickens exceeded **400 grams**.
+### Death Rate:
+- **Overall death rate**: Approximately **5.8%** of cases resulted in death.
 
-### Feed Type Popularity:
-- **Casein** and **sunflower** were the most commonly used feed types.
+### Age:
+- The mean age of those who died is significantly higher (**68.5 years**) than those who survived (**48 years**).
+- The difference is statistically significant with a p-value < 0.05.
 
-### Feed Efficiency:
-- Chickens fed with **casein** showed the highest average weight, while those fed with **linseed** had the lowest.
+### Gender:
+- Males have a higher death rate (**8.4%**) compared to females (**3.7%**).
+- This difference is statistically significant with a p-value < 0.01.
 
-### Variability:
-- Boxplots revealed significant variability in weight for certain feed types, indicating inconsistent results.
+### Geographic Insights:
+- Top 10 countries by death count are highlighted, with the highest deaths recorded in specific regions.
+
+### Temporal Trends:
+- Symptom onset and hospital visit trends indicate specific peak periods for COVID-19 cases.
 
 ---
 
-## 🧹 Data Cleaning Story
+## 🔍 Statistical Tests and Modeling
 
-### Color and Shape Mapping:
-- Assigned specific colors and shapes to feed types for better visualization clarity.
+### Age:
+- **T-test** confirms a significant difference in the mean age of deceased versus surviving individuals.
 
-### Sorting and Grouping:
-- Ordered chickens by weight to ensure consistent insights.
+### Gender:
+- **T-test** supports the conclusion that gender has a significant effect on death rates, favoring females.
 
-### Handling Missing Data:
-- Although the dataset had no missing values, precautions were included with `na.rm = TRUE`.
+### Logistic Regression:
+- Logistic models revealed that age, gender, visiting Wuhan, and being from Wuhan are significant predictors of death probability.
 
 ---
 
 ## 🌟 Why This Project Matters
 
-Understanding how feed types impact chicken growth allows for data-driven decisions in optimizing poultry farming. This project demonstrates how R can transform raw data into actionable insights through statistical analysis and visualization.
+Understanding the factors influencing COVID-19 outcomes provides valuable insights for policymakers, healthcare providers, and the general public. This project demonstrates how R can be used to transform raw data into actionable insights, enabling data-driven decisions during a global pandemic.
 
+---
+
+## 📸 Visual Previews
+
+### Age Distribution
+![Age Distribution](path/to/your/age_distribution_image.png)
+
+### Deaths by Country
+![Top 10 Countries by Deaths](path/to/your/deaths_by_country_image.png)
+
+### Temporal Trends
+![Symptom and Hospitalization Trends](path/to/your/temporal_trends_image.png)
+
+---
+
+## 🛠 Tools Used
+- **Data Exploration**: `Hmisc` package and base R functions.
+- **Visualization**: `hist()`, `barplot()`, `plot()`, and custom line charts.
+- **Statistical Analysis**: T-tests and logistic regression (`glm()`).
+
+---
+
+### 📥 How to Use This Project
+1. Clone the repository: `git clone <repository-link>`
+2. Open the R script: `COVID19_analysis.R`
+3. Install required packages: `install.packages("Hmisc")`
+4. Run the script and explore insights.
+
+---
+
+## 🚀 Future Work
+- Explore additional variables such as comorbidities and treatment types.
+- Perform cluster analysis to identify patterns in COVID-19 cases.
+- Build advanced machine learning models for outcome prediction.
+
+**Stay safe and informed!**

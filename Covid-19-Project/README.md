@@ -84,19 +84,6 @@ Understanding the factors influencing COVID-19 outcomes provides valuable insigh
 
 ---
 
-## 📸 Visual Previews
-
-### Age Distribution
-![Age Distribution](path/to/your/age_distribution_image.png)
-
-### Deaths by Country
-![Top 10 Countries by Deaths](path/to/your/deaths_by_country_image.png)
-
-### Temporal Trends
-![Symptom and Hospitalization Trends](path/to/your/temporal_trends_image.png)
-
----
-
 ## 🛠 Tools Used
 - **Data Exploration**: `Hmisc` package and base R functions.
 - **Visualization**: `hist()`, `barplot()`, `plot()`, and custom line charts.

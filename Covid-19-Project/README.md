@@ -52,6 +52,7 @@ The dataset consists of:
 ### Age:
 - The mean age of those who died is significantly higher (**68.5 years**) than those who survived (**48 years**).
 - The difference is statistically significant with a p-value < 0.05.
+![Geographic Insights](https://github.com/karolholda/R-for-Data-Analysis/blob/main/Covid-19-Project/assets/2.jpg)
 
 ### Gender:
 - Males have a higher death rate (**8.4%**) compared to females (**3.7%**).
@@ -59,10 +60,11 @@ The dataset consists of:
 
 ### Geographic Insights:
 - Top 10 countries by death count are highlighted, with the highest deaths recorded in specific regions.
+![Geographic Insights](https://github.com/karolholda/R-for-Data-Analysis/blob/main/Covid-19-Project/assets/3.jpg)
 
 ### Temporal Trends:
 - Symptom onset and hospital visit trends indicate specific peak periods for COVID-19 cases.
-
+![Temporal Trends](https://github.com/karolholda/R-for-Data-Analysis/blob/main/Covid-19-Project/assets/4.jpg)
 ---
 
 ## 🔍 Statistical Tests and Modeling
